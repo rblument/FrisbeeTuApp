@@ -12,6 +12,9 @@
  */
 package edu.regis.frisbee.view.act;
 
+import edu.regis.frisbee.model.TutoringSession;
+import edu.regis.frisbee.view.MainFrame;
+import edu.regis.frisbee.view.SplashFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.util.logging.Logger;
@@ -92,16 +95,17 @@ public class SignInAction extends FrisbeeGuiAction {
 
         switch (reply.getStatus()) {
             case "Authenticated":
+        */
                 MainFrame frame = MainFrame.instance();
 
-                TutoringSession session = gson.fromJson(reply.getData(), TutoringSession.class);
+            //    TutoringSession session = gson.fromJson(reply.getData(), TutoringSession.class);
 
                 SplashFrame.instance().setVisible(false);
 
                 frame.setVisible(true);
 
-                frame.setModel(session);
-
+              //  frame.setModel(session);
+/*
                 break;
 
             case "InvalidPassword":

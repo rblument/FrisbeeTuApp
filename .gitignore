@@ -1,0 +1,17 @@
+# Compiled source
+*.class
+FrisbeeApp/target
+
+# Packages
+*.jar
+
+# logs
+*.log
+
+# OD
+.DS_STORE
+.DS_Store?
+
+# NetBeans
+/FrisbeeApp/nbproject/
+

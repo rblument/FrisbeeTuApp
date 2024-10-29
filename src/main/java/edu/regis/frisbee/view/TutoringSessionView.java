@@ -14,7 +14,7 @@ package edu.regis.frisbee.view;
 
 import edu.regis.frisbee.model.TutoringSession;
 import java.awt.GridBagConstraints;
-import javax.swing.JLabel;
+import javax.swing.JTabbedPane;
 
 /**
  * Displays a tutoring session (the top-level GUI view for the application).
@@ -24,11 +24,16 @@ import javax.swing.JLabel;
  *
  * @author rickb
  */
-public class TutoringSessionView extends GPanel {
+public class TutoringSessionView extends GPanel  {
+   
     /**
      * The tutoring session model displayed in this view.
      */
     private TutoringSession model;
+   
+    private JTabbedPane tabPanel;
+    
+    private RicksView ricksView;
 
     /**
      * Initialize this view including creating and laying out its child components.
@@ -43,7 +48,7 @@ public class TutoringSessionView extends GPanel {
      *
      * @return a TutoringSession
      */
-    public TutoringSession getModel() {
+   public TutoringSession getModel() {
         return model;
     }
 
@@ -56,21 +61,27 @@ public class TutoringSessionView extends GPanel {
         this.model = model;
     }
 
+
     /**
      * Create the child GUI components appearing in this frame.
      */
     private void initializeComponents() {
+        tabPanel = new JTabbedPane();
+        
+        ricksView = new RicksView();
+        
+        tabPanel.add("Rick", ricksView);
     }
 
     /**
      * Layout the child components in this view
      */
     private void layoutComponents() {
-        JLabel test = new JLabel("A Tutoring Session is Displayed Here.");
-        
-        addc(test, 0, 0, 1, 1, 0.0, 0.0,
-                GridBagConstraints.NORTHWEST, GridBagConstraints.NONE,
+ 
+        addc(tabPanel, 0, 0, 1, 1, 1.0, 1.0,
+                GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH,
                 5, 5, 5, 5);
     }
+
 }
 
