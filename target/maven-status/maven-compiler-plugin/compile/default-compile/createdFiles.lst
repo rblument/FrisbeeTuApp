@@ -69,6 +69,7 @@ edu\regis\frisbee\svc\StudentSvc.class
 edu\regis\frisbee\model\aol\ScaffoldLevel.class
 edu\regis\frisbee\model\TaskKind.class
 edu\regis\frisbee\view\FrisbeeMenubar.class
+edu\regis\frisbee\view\LogicEquivalence.class
 edu\regis\frisbee\model\ExampleType.class
 edu\regis\frisbee\svc\TutorSvc.class
 edu\regis\frisbee\util\ImgFactory.class
