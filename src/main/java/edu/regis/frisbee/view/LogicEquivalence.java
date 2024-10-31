@@ -18,4 +18,15 @@ package edu.regis.frisbee.view;
  */
 public class LogicEquivalence {
     // class created for logic equivalence view
+    
+    
+    
+    // Sofia was here
+    // Hello Logical Equivalence View
+    
+    /**
+     * add --all
+     * commit -m 'message here'
+     * push
+     */
 }
