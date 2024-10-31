@@ -18,4 +18,6 @@ package edu.regis.frisbee.view;
  */
 public class LogicEquivalence {
     // class created for logic equivalence view
+    
+    //sophie was here :)
 }
