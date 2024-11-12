@@ -34,6 +34,8 @@ public class TutoringSessionView extends GPanel  {
     private JTabbedPane tabPanel;
     
     private RicksView ricksView;
+    
+    private LogicEquivalence logicEquivalence;
 
     /**
      * Initialize this view including creating and laying out its child components.
@@ -71,6 +73,9 @@ public class TutoringSessionView extends GPanel  {
         ricksView = new RicksView();
         
         tabPanel.add("Rick", ricksView);
+        
+        logicEquivalence = new LogicEquivalence();
+        tabPanel.add("Logic Equivalence", logicEquivalence);
     }
 
     /**
