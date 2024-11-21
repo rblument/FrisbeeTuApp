@@ -53,9 +53,9 @@ public class RicksView extends GPanel implements ActionListener {
 	     GridBagConstraints.NORTHWEST,  GridBagConstraints.HORIZONTAL,
 	     5,5,5,5);	
         
-         addc(submitBut, 0,1, 2,1, 0.0,0.0,
-	     GridBagConstraints.CENTER,  GridBagConstraints.NONE,
-	     5,5,5,5);	
+        addc(submitBut, 0,1, 2,1, 0.0,0.0,
+            GridBagConstraints.CENTER,  GridBagConstraints.NONE,
+            5,5,5,5);	
         
     }
 

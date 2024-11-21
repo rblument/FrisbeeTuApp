@@ -29,7 +29,6 @@ edu\regis\frisbee\view\GPanel.class
 edu\regis\frisbee\svc\ClientRequest.class
 edu\regis\frisbee\model\aol\StudentModel.class
 edu\regis\frisbee\view\SplashFrame.class
-edu\regis\frisbee\err\FrisbeeException.class
 edu\regis\frisbee\model\TaskState.class
 edu\regis\frisbee\view\act\SaveSessionAction.class
 edu\regis\frisbee\svc\CourseSvc.class
