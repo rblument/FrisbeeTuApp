@@ -13,7 +13,11 @@
 package edu.regis.frisbee.view;
 
 import edu.regis.frisbee.model.TutoringSession;
+import java.awt.Component;
 import java.awt.GridBagConstraints;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 
 /**
@@ -33,7 +37,8 @@ public class TutoringSessionView extends GPanel  {
    
     private JTabbedPane tabPanel;
     
-    private RicksView ricksView;
+    private TruthTableViewDB diegoView;
+    private RicksView rickView;
 
     /**
      * Initialize this view including creating and laying out its child components.
@@ -67,10 +72,13 @@ public class TutoringSessionView extends GPanel  {
      */
     private void initializeComponents() {
         tabPanel = new JTabbedPane();
+           
+        diegoView = new TruthTableViewDB();
+        rickView = new RicksView();
         
-        ricksView = new RicksView();
-        
-        tabPanel.add("Rick", ricksView);
+        tabPanel.add("Truth Table View", diegoView);
+        tabPanel.add("Rick View", rickView);
+       
     }
 
     /**
