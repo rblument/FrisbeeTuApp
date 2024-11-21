@@ -72,35 +72,13 @@ public class TutoringSessionView extends GPanel  {
      */
     private void initializeComponents() {
         tabPanel = new JTabbedPane();
-        
-        
+           
         diegoView = new TruthTableViewDB();
         rickView = new RicksView();
         
         tabPanel.add("Truth Table View", diegoView);
         tabPanel.add("Rick View", rickView);
-        
-        
-        tabPanel.addComponentListener(new ComponentListener() {
-        
-        @Override
-        public void componentResized(ComponentEvent e){
-            //tablePanelSize = tabPanel.getHeight();
-            //table.set
-        }
-        
-        @Override 
-        public void componentMoved(ComponentEvent e){    
-        }
-        @Override
-        public void componentShown(ComponentEvent e ){   
-        }
-        @Override
-        public void componentHidden(ComponentEvent e){   
-        }
-        });
-        
-        
+       
     }
 
     /**
