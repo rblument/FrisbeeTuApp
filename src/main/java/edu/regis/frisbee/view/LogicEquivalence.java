@@ -12,6 +12,18 @@
  */
 package edu.regis.frisbee.view;
 
+import java.awt.GridBagConstraints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.*;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -31,9 +43,9 @@ import javax.swing.SwingUtilities;
 
 /**
  *
- * @author Sophie Holland
+ * @author Sofia Reyes
  */
-public class LogicEquivalence extends GPanel implements ActionListener {
+public class LogicEquivalence extends GPanel implements ActionListener { 
     
     private JLabel title;
     private JLabel instructions;
@@ -55,11 +67,42 @@ public class LogicEquivalence extends GPanel implements ActionListener {
     private JButton closeButt;
     private JButton submitButt;
     private JButton hintButt;
+      
+       private DefaultTableModel model;
+    private JButton eqLawsButton;
+    private JLabel titleLabel;
+    private JTextField userInput;
     
     public LogicEquivalence() {
         initializeComponents();
         display();
+      
+              inputComponents();
+        DisplayLawWindow();
+        layoutComponents();
     }
+  
+    public void DisplayLawWindow() {
+        eqLawsButton = new JButton("Reminder");
+        eqLawsButton.setPreferredSize(new Dimension(150, 50));
+        eqLawsButton.addActionListener(this);
+    }
+
+    public void TablePanelDisplay() {
+        JFrame frame = new JFrame("Logical Equivalences Table");
+
+        JTable table = new JTable(new MultiLineTableModel());
+
+        table.getColumnModel().getColumn(1).setCellRenderer(new MultilineCellRenderer());
+
+        JScrollPane pane = new JScrollPane(table);
+        frame.add(pane);
+
+        frame.setSize(500, 400);
+        frame.setVisible(true);
+
+    }
+      
     
     private void initializeComponents() {
         title = new JLabel();
@@ -95,6 +138,11 @@ public class LogicEquivalence extends GPanel implements ActionListener {
         
         hintButt = new JButton("Hint");
         hintButt.addActionListener(this);
+      
+              userInput = new JTextField();
+        String hint1 = "Logical Equivalences";
+        
+       // userInput.setText(obscureText(hint1));
     }
     
     private void display() {   
@@ -167,7 +215,26 @@ public class LogicEquivalence extends GPanel implements ActionListener {
         addc(submitButt, 2, 8, 1, 3, 1.0, 0.0,
            GridBagConstraints.LINE_START, GridBagConstraints.NONE,
            5, 5, 5, 5);
+      
+              titleLabel = new JLabel("Practice Logical Equivalences");
+        titleLabel.setFont(new Font("Serif", Font.BOLD, 25));
+
+      /*
+        addc(titleLabel, 0, 0, 1, 1, 0.0, 0.0,
+                GridBagConstraints.NORTHWEST, GridBagConstraints.NONE,
+                5, 5, 5, 5);
+
+        addc(userInput, 0, 0, 1, 1, 0.0, 0.0,
+                GridBagConstraints.NORTHWEST, GridBagConstraints.NONE,
+                5, 5, 5, 5);
+        
+        addc(eqLawsButton, 0, 0, 1, 1, 1.0, 1.0,
+                GridBagConstraints.EAST, GridBagConstraints.NONE,
+                5, 5, 5, 5);
+                */
     }    
+      
+
     
     public void reminderView() {
         closeButt = new JButton("Close");
@@ -203,6 +270,14 @@ public class LogicEquivalence extends GPanel implements ActionListener {
     
     @Override
     public void actionPerformed(ActionEvent e) {
+      
+              if (e.getSource() == eqLawsButton) {
+            TablePanelDisplay();
+        }
+      
+      
+      
+      
         if (e.getSource() == reminderButt) {
             System.out.println("------Button clicked to view Logic Equivalences "
                     + "laws------");
@@ -261,5 +336,42 @@ public class LogicEquivalence extends GPanel implements ActionListener {
             
             System.out.println("------Hint Button selected for logic equivalences------");
         }
+
     }
+      
+       static class MultiLineTableModel extends AbstractTableModel {
+
+        private final String[] columnNames = {"Name", "Equivalence"};
+        private final Object[][] data = {
+            {"Identity Law", "p ⋀ T = p\np ∨ F = p"},
+            {"Domination Law", "p ∨ T = T\np ⋀ F = F"},
+            {"Idempotent Law", "p ∨ p = p\np ⋀ p= p"}
+        };
+
+        @Override
+        public int getRowCount() {
+            return data.length;
+        }
+
+        @Override
+        public int getColumnCount() {
+            return columnNames.length;
+        }
+
+        @Override
+        public Object getValueAt(int rowIndex, int columnIndex) {
+            return data[rowIndex][columnIndex];
+        }
+
+        @Override
+        public String getColumnName(int column) {
+            return columnNames[column];
+        }
+
+        @Override
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return false; // Make the table non-editable
+        }
+    }
+
 }

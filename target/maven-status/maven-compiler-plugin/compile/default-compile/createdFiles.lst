@@ -9,7 +9,9 @@ edu\regis\frisbee\view\RicksView.class
 edu\regis\frisbee\dao\CourseDAO.class
 edu\regis\frisbee\view\act\FrisbeeGuiAction.class
 edu\regis\frisbee\err\MissingPropertyException.class
+edu\regis\frisbee\view\LogicEquivalence$MultiLineTableModel.class
 edu\regis\frisbee\svc\TutorReply.class
+edu\regis\frisbee\view\MultilineCellRenderer.class
 edu\regis\frisbee\model\Account.class
 edu\regis\frisbee\model\Course.class
 edu\regis\frisbee\svc\UserSvc.class
