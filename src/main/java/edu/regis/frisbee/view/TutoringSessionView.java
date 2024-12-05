@@ -35,6 +35,8 @@ public class TutoringSessionView extends GPanel  {
     
     private RicksView ricksView;
 
+    private Assessment assessmentView;
+
     /**
      * Initialize this view including creating and laying out its child components.
      */
@@ -69,8 +71,10 @@ public class TutoringSessionView extends GPanel  {
         tabPanel = new JTabbedPane();
         
         ricksView = new RicksView();
+        assessmentView = new Assessment();
         
         tabPanel.add("Rick", ricksView);
+        tabPanel.add("Assessment", assessmentView);
     }
 
     /**
